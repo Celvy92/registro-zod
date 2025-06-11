@@ -1,70 +1,67 @@
 body {
-    font-family: 'Segoe UI', sans-serif;
-    background-color: #f2f6ff;
-    padding: 30px;
-  }
-  
-  .container {
-    max-width: 400px;
-    margin: 0 auto;
-    background: white;
-    padding: 20px;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  }
-  
-  h1 {
-    text-align: center;
-    color: #3f3f3f;
-  }
-  
-  label {
-    display: block;
-    margin-top: 15px;
-    font-weight: bold;
-  }
-  
-  input {
-    width: 100%;
-    padding: 8px;
-    margin-top: 5px;
-    border: 1px solid #ccc;
-    border-radius: 6px;
-    box-sizing: border-box;
-  }
-  
-  button {
-    margin-top: 20px;
-    width: 100%;
-    padding: 10px;
-    background-color: #4e6cef;
-    color: white;
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
-    font-size: 16px;
-  }
-  
-  button:hover {
-    background-color: #3b51c3;
-  }
-  
-  .error {
-    color: #d50000;
-    font-size: 13px;
-    height: 16px;
-    display: block;
-  }
-  
-  #mensaje-exito {
-    color: green;
-    font-size: 16px;
-    text-align: center;
-    margin-top: 20px;
-  }
-  .error {
-    color: red;
-    font-size: 0.9em;
-    margin-bottom: 10px;
-  }
-  
+  font-family: Arial, sans-serif;
+  max-width: 400px;
+  margin: 30px auto;
+  padding: 0 15px;
+  background: #f9f9f9;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 8px rgba(0,0,0,0.1);
+}
+
+label {
+  font-weight: bold;
+  margin-bottom: 5px;
+  display: block;
+  color: #444;
+}
+
+input {
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+button {
+  padding: 10px;
+  font-size: 1.1rem;
+  border: none;
+  background-color: #007bff;
+  color: white;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+.error {
+  color: #d93025;
+  font-size: 0.9rem;
+  height: 18px; /* para evitar salto cuando aparece texto */
+}
+
+#mensaje-exito {
+  margin-top: 15px;
+  color: green;
+  font-weight: bold;
+  text-align: center;
+}

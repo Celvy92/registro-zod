@@ -2,27 +2,30 @@ const form = document.getElementById("registro-form");
 const nombre = document.getElementById("nombre");
 const correo = document.getElementById("correo");
 const password = document.getElementById("password");
-const mensajeExito = document.getElementById("mensaje-exito");
 
-// Errores específicos
 const errorNombre = document.getElementById("error-nombre");
 const errorCorreo = document.getElementById("error-correo");
 const errorPassword = document.getElementById("error-password");
+const mensajeExito = document.getElementById("mensaje-exito");
 
+// Definimos esquema con Zod
 const schema = z.object({
   nombre: z.string().min(1, "El nombre es obligatorio"),
   correo: z.string().email("Correo no válido"),
   password: z.string().min(6, "La contraseña debe tener al menos 6 caracteres"),
 });
 
-form.addEventListener("submit", (e) => {
-  e.preventDefault();
-
-  // Limpiar mensajes anteriores
-  mensajeExito.textContent = "";
+// Limpiar errores
+function limpiarErrores() {
   errorNombre.textContent = "";
   errorCorreo.textContent = "";
   errorPassword.textContent = "";
+  mensajeExito.textContent = "";
+}
+
+form.addEventListener("submit", (e) => {
+  e.preventDefault();
+  limpiarErrores();
 
   const datos = {
     nombre: nombre.value.trim(),
@@ -47,7 +50,7 @@ form.addEventListener("submit", (e) => {
     return;
   }
 
+  // Si pasa la validación:
   mensajeExito.textContent = "✅ ¡Formulario enviado con éxito!";
-  mensajeExito.style.color = "green";
   form.reset();
 });
